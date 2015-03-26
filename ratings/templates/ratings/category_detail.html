@@ -1,0 +1,11 @@
+{% extends 'ratings/base.html' %}
+
+{% block content %}
+    {% if category.name %}
+        <div class="name">
+            {{ category.name }}
+        </div>
+    {% endif %}
+    <h1>{{ category.name }}</h1>
+    <p>{{ category.desc|linebreaks }}</p>
+{% endblock %}
