@@ -7,5 +7,12 @@
         </div>
     {% endif %}
     <h1>{{ category.name }}</h1>
-    <p>{{ category.desc|linebreaks }}</p>
+    <p>{{ category.desc }}</p>
+    
+    {% for tool in tools %}
+        <div class = "tool">
+            <h1><a href="">{{ tool.name }}</a></h1>
+            <p>{{ tool.desc|linebreaks }}</p>
+        </div>
+    {% endfor %}
 {% endblock %}
