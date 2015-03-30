@@ -1,0 +1,101 @@
+2015-03-30T01:30:10.284068+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/django/conf/__init__.py", line 42, in _setup
+2015-03-30T01:30:10.284008+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2015-03-30T01:30:10.284013+00:00 app[web.1]:     worker.init_process()
+2015-03-30T01:30:10.284026+00:00 app[web.1]:     self.callable = self.load()
+2015-03-30T01:30:10.284066+00:00 app[web.1]:     self._setup(name)
+2015-03-30T01:30:10.360630+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 175, in run
+2015-03-30T01:30:10.362983+00:00 app[web.1]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+2015-03-30T01:30:10.284009+00:00 app[web.1]: 
+2015-03-30T01:30:10.284029+00:00 app[web.1]:     return self.load_wsgiapp()
+2015-03-30T01:30:10.284047+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/util.py", line 355, in import_app
+2015-03-30T01:30:10.284065+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/django/conf/__init__.py", line 46, in __getattr__
+2015-03-30T01:30:10.361627+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 308, in sleep
+2015-03-30T01:30:10.363068+00:00 app[web.1]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2015-03-30T01:30:10.363149+00:00 app[web.1]: Traceback (most recent call last):
+2015-03-30T01:30:10.284012+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 503, in spawn_worker
+2015-03-30T01:30:10.284027+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+2015-03-30T01:30:10.284052+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/django/core/wsgi.py", line 14, in get_wsgi_application
+2015-03-30T01:30:10.284056+00:00 app[web.1]:     configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+2015-03-30T01:30:10.362064+00:00 app[web.1]:     ready = select.select([self.PIPE[0]], [], [], 1.0)
+2015-03-30T01:30:10.363117+00:00 app[web.1]: 
+2015-03-30T01:30:10.284023+00:00 app[web.1]:     self.wsgi = self.app.wsgi()
+2015-03-30T01:30:10.284045+00:00 app[web.1]:     return util.import_app(self.app_uri)
+2015-03-30T01:30:10.284048+00:00 app[web.1]:     __import__(module)
+2015-03-30T01:30:10.361591+00:00 app[web.1]:     self.sleep()
+2015-03-30T01:30:10.284054+00:00 app[web.1]:     django.setup()
+2015-03-30T01:30:10.284070+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/django/conf/__init__.py", line 98, in __init__
+2015-03-30T01:30:10.360575+00:00 app[web.1]: Traceback (most recent call last):
+2015-03-30T01:30:10.364264+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/app/base.py", line 72, in run
+2015-03-30T01:30:10.284051+00:00 app[web.1]:     application = Cling(get_wsgi_application())
+2015-03-30T01:30:10.362516+00:00 app[web.1]:     self.reap_workers()
+2015-03-30T01:30:10.363178+00:00 app[web.1]:   File "/app/.heroku/python/bin/gunicorn", line 11, in <module>
+2015-03-30T01:30:10.363466+00:00 app[web.1]:     sys.exit(run())
+2015-03-30T01:30:10.363500+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 74, in run
+2015-03-30T01:30:10.362549+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 455, in reap_workers
+2015-03-30T01:30:10.363854+00:00 app[web.1]:     WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]").run()
+2015-03-30T01:30:10.363891+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/app/base.py", line 189, in run
+2015-03-30T01:30:10.364938+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 293, in halt
+2015-03-30T01:30:10.364231+00:00 app[web.1]:     super(Application, self).run()
+2015-03-30T01:30:10.365353+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 338, in stop
+2015-03-30T01:30:10.365750+00:00 app[web.1]:     time.sleep(0.1)
+2015-03-30T01:30:10.366081+00:00 app[web.1]:     self.reap_workers()
+2015-03-30T01:30:10.284055+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/django/__init__.py", line 20, in setup
+2015-03-30T01:30:10.284069+00:00 app[web.1]:     self._wrapped = Settings(settings_module)
+2015-03-30T01:30:10.362098+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 210, in handle_chld
+2015-03-30T01:30:10.363119+00:00 app[web.1]: During handling of the above exception, another exception occurred:
+2015-03-30T01:30:10.365321+00:00 app[web.1]:     self.stop()
+2015-03-30T01:30:10.366134+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 455, in reap_workers
+2015-03-30T01:30:10.364527+00:00 app[web.1]:     Arbiter(self).run()
+2015-03-30T01:30:10.364558+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 197, in run
+2015-03-30T01:30:10.364906+00:00 app[web.1]:     self.halt(reason=inst.reason, exit_status=inst.exit_status)
+2015-03-30T01:30:10.365783+00:00 app[web.1]:   File "/app/.heroku/python/lib/python3.4/site-packages/gunicorn/arbiter.py", line 210, in handle_chld
+2015-03-30T01:30:10.366682+00:00 app[web.1]: gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+2015-03-30T01:30:10.366561+00:00 app[web.1]:     raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+2015-03-30T01:30:11.218282+00:00 heroku[web.1]: Process exited with status 1
+2015-03-30T01:30:11.237734+00:00 heroku[web.1]: State changed from up to crashed
+2015-03-30T01:30:24.498712+00:00 heroku[api]: Release v12 created by treowayne@gmail.com
+2015-03-30T01:30:24.498712+00:00 heroku[api]: Set DJANGO_SETTINGS_MODULE config vars by treowayne@gmail.com
+2015-03-30T01:30:24.679251+00:00 heroku[web.1]: State changed from crashed to starting
+2015-03-30T01:30:43.718935+00:00 heroku[web.1]: Starting process with command `gunicorn feHelix.wsgi --log-file -`
+2015-03-30T01:30:46.279079+00:00 app[web.1]: [2015-03-30 01:30:46 +0000] [3] [INFO] Starting gunicorn 19.2.1
+2015-03-30T01:30:46.363718+00:00 app[web.1]: [2015-03-30 01:30:46 +0000] [8] [INFO] Booting worker with pid: 8
+2015-03-30T01:30:46.284201+00:00 app[web.1]: [2015-03-30 01:30:46 +0000] [3] [INFO] Listening at: http://0.0.0.0:28601 (3)
+2015-03-30T01:30:46.284298+00:00 app[web.1]: [2015-03-30 01:30:46 +0000] [3] [INFO] Using worker: sync
+2015-03-30T01:30:46.295233+00:00 app[web.1]: [2015-03-30 01:30:46 +0000] [7] [INFO] Booting worker with pid: 7
+2015-03-30T01:30:47.386577+00:00 heroku[web.1]: State changed from starting to up
+2015-03-30T01:30:48.547043+00:00 heroku[router]: at=info method=GET path="/" host=fehelix2.herokuapp.com request_id=2f037146-3abb-4f61-916e-21258a37e9d4 fwd="174.70.47.34" dyno=web.1 connect=7ms service=304ms status=500 bytes=239
+2015-03-30T01:30:48.748929+00:00 heroku[router]: sock=client at=error code=H18 desc="Request Interrupted" method=GET path="/" host=fehelix2.herokuapp.com request_id=d2e4ea59-7e4d-47f8-9668-61331a634685 fwd="174.70.47.34" dyno=web.1 connect=1ms service=273ms status=503 bytes=239
+2015-03-30T01:30:53.598342+00:00 heroku[web.1]: State changed from up to starting
+2015-03-30T01:30:56.952034+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-03-30T01:30:57.808128+00:00 app[web.1]: [2015-03-29 20:30:57 -0500] [8] [INFO] Worker exiting (pid: 8)
+2015-03-30T01:30:57.808213+00:00 app[web.1]: [2015-03-30 01:30:57 +0000] [3] [INFO] Handling signal: term
+2015-03-30T01:30:57.836810+00:00 app[web.1]: [2015-03-29 20:30:57 -0500] [7] [INFO] Worker exiting (pid: 7)
+2015-03-30T01:30:58.202054+00:00 app[web.1]: [2015-03-30 01:30:58 +0000] [3] [INFO] Shutting down: Master
+2015-03-30T01:30:58.759995+00:00 heroku[web.1]: Starting process with command `gunicorn feHelix.wsgi --log-file -`
+2015-03-30T01:30:59.101005+00:00 heroku[web.1]: Process exited with status 0
+2015-03-30T01:31:00.884542+00:00 app[web.1]: [2015-03-30 01:31:00 +0000] [3] [INFO] Listening at: http://0.0.0.0:28370 (3)
+2015-03-30T01:31:00.896041+00:00 app[web.1]: [2015-03-30 01:31:00 +0000] [7] [INFO] Booting worker with pid: 7
+2015-03-30T01:31:00.877987+00:00 app[web.1]: [2015-03-30 01:31:00 +0000] [3] [INFO] Starting gunicorn 19.2.1
+2015-03-30T01:31:00.884719+00:00 app[web.1]: [2015-03-30 01:31:00 +0000] [3] [INFO] Using worker: sync
+2015-03-30T01:31:00.933505+00:00 app[web.1]: [2015-03-30 01:31:00 +0000] [8] [INFO] Booting worker with pid: 8
+2015-03-30T01:31:01.427220+00:00 heroku[web.1]: State changed from starting to up
+2015-03-30T01:31:02.508092+00:00 heroku[router]: at=info method=GET path="/" host=fehelix2.herokuapp.com request_id=a704bc7a-d028-4aa9-84e5-e6c208de2953 fwd="174.70.47.34" dyno=web.1 connect=3ms service=199ms status=500 bytes=239
+2015-03-30T01:31:51.350746+00:00 heroku[router]: at=info method=GET path="/" host=fehelix2.herokuapp.com request_id=b3136870-9126-4a7d-9dde-915cd5e34a62 fwd="174.70.47.34" dyno=web.1 connect=1ms service=156ms status=500 bytes=239
+2015-03-30T01:31:52.906192+00:00 heroku[router]: at=info method=GET path="/" host=fehelix2.herokuapp.com request_id=8581a52b-968f-4e5d-bf65-34560041acbc fwd="174.70.47.34" dyno=web.1 connect=1ms service=120ms status=500 bytes=239
+2015-03-30T01:31:58.396353+00:00 heroku[router]: at=info method=GET path="/" host=fehelix2.herokuapp.com request_id=fd382ab3-917f-4db3-ad75-8ccf3fc3d31d fwd="174.70.47.34" dyno=web.1 connect=4ms service=129ms status=500 bytes=239
+2015-03-30T01:33:09.951573+00:00 heroku[router]: at=info method=GET path="/" host=fehelix2.herokuapp.com request_id=36ee0e11-ffb0-4362-b0cb-a862659a0dc2 fwd="174.70.47.34" dyno=web.1 connect=2ms service=142ms status=500 bytes=239
+2015-03-30T01:33:11.303675+00:00 heroku[router]: at=info method=GET path="/" host=fehelix2.herokuapp.com request_id=ab0a2783-159c-4551-8c3f-d560dc0ab8d4 fwd="174.70.47.34" dyno=web.1 connect=1ms service=116ms status=500 bytes=239
+2015-03-30T01:33:21.696829+00:00 heroku[web.1]: State changed from up to starting
+2015-03-30T01:33:24.857540+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2015-03-30T01:33:25.505508+00:00 app[web.1]: [2015-03-29 20:33:25 -0500] [8] [INFO] Worker exiting (pid: 8)
+2015-03-30T01:33:25.536604+00:00 app[web.1]: [2015-03-30 01:33:25 +0000] [3] [INFO] Shutting down: Master
+2015-03-30T01:33:25.504166+00:00 app[web.1]: [2015-03-29 20:33:25 -0500] [7] [INFO] Worker exiting (pid: 7)
+2015-03-30T01:33:25.514364+00:00 app[web.1]: [2015-03-30 01:33:25 +0000] [3] [INFO] Handling signal: term
+2015-03-30T01:33:26.494114+00:00 heroku[web.1]: Starting process with command `gunicorn feHelix.wsgi --log-file -`
+2015-03-30T01:33:26.585269+00:00 heroku[web.1]: Process exited with status 0
+2015-03-30T01:33:28.276834+00:00 app[web.1]: [2015-03-30 01:33:28 +0000] [3] [INFO] Listening at: http://0.0.0.0:55924 (3)
+2015-03-30T01:33:28.287890+00:00 app[web.1]: [2015-03-30 01:33:28 +0000] [7] [INFO] Booting worker with pid: 7
+2015-03-30T01:33:28.361084+00:00 app[web.1]: [2015-03-30 01:33:28 +0000] [8] [INFO] Booting worker with pid: 8
+2015-03-30T01:33:28.276949+00:00 app[web.1]: [2015-03-30 01:33:28 +0000] [3] [INFO] Using worker: sync
+2015-03-30T01:33:28.271742+00:00 app[web.1]: [2015-03-30 01:33:28 +0000] [3] [INFO] Starting gunicorn 19.2.1
+2015-03-30T01:33:28.869577+00:00 heroku[web.1]: State changed from starting to up
